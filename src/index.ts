@@ -1,0 +1,1 @@
+console.log('Entidades de dominio');

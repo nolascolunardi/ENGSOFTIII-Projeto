@@ -1,0 +1,6 @@
+
+export enum AddressType {
+    BILLING = 'BILLING',
+    SHIPPING = 'SHIPPING',
+    BILLING_AND_SHIPPING = 'BILLING_AND_SHIPPING'
+}

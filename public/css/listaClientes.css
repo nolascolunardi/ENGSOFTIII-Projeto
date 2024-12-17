@@ -1,0 +1,48 @@
+.lista-titulo{
+    color: var(--blue);
+    margin-top: 8%;
+    margin-bottom: 4%;
+}
+
+.tabela{
+    width: 90%;
+    margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-cliente{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-image {
+    background: none; 
+    border: none;    
+    padding: 0;    
+    cursor: pointer;  
+}
+
+.img {
+    width: 40px;
+    height: 40px;
+}
+
+.svg{
+    width: 25px;
+    height: 25px;
+}
+
+.form-svg{
+    padding-top: 8px;
+
+}
+
+.blue{
+    filter: invert(27%) sepia(93%) saturate(2963%) hue-rotate(192deg) brightness(95%) contrast(92%);
+}
+.green{
+    filter: invert(63%) sepia(52%) saturate(747%) hue-rotate(85deg) brightness(90%) contrast(85%);
+}

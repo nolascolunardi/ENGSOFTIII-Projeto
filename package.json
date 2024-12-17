@@ -1,0 +1,39 @@
+{
+  "name": "engiii-cadastro-de-cliente",
+  "version": "1.0.0",
+  "author": "Ana Laura Lunardi",
+  "license": "ISC",
+  "description": "Projeto para cadastro de cliente para a disciplina de Engenharia de Software III",
+  "main": "server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx watch src/server.ts",
+    "up:dev": "docker compose up -d && npm run start",
+    "down:dev": "docker compose down",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles",
+    "typeorm": "tsx -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "migration:create": "npm run typeorm -- migration:create ./src/config/bancoDados/typeORM/migrations/tabelas",
+    "migration:run": "npm run typeorm migration:run -- -d ./src/config/bancoDados/typeORM/postgresDataSource.ts",
+    "migration:revert": "npm run typeorm migration:revert -- -d ./src/config/bancoDados/typeORM/postgresDataSource.ts"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.8.1",
+    "@types/uuid": "^10.0.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "uuid": "^10.0.0",
+    "vitest": "^2.1.1"
+  }
+}

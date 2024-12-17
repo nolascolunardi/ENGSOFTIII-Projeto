@@ -1,0 +1,37 @@
+<div id="cartoes-container" class="section active" >
+    <form class="form-cartao">
+        <h3 class="d-flex justify-content-start mb-3"><img src="/images/formCliente/credit-card.svg" alt="client-icon" class="form-icon">Dados do Cartão <span class="cartao-counter form-counter">1</span></h3>
+        <div  style="width: 100%;">
+            <div class="entry">
+                <div class="mb-3">
+                    <label for="numeroCartao" class="form-label d-flex justify-content-start">Digite o número do cartão:</label>
+                    <input type="text" class="form-control" name="numeroCartao" maxlength="16" required placeholder="Exemplo: 123456789123456">
+                </div>
+                <div class="mb-3">
+                    <label for="nomeImpresso" class="form-label d-flex justify-content-start">Digite o nome impresso no cartão:</label>
+                    <input type="text" class="form-control" name="nomeImpresso" required placeholder="Exemplo: Julia Salvador">
+                </div>
+                <div class="mb-3">
+                    <label for="cvv" class="form-label d-flex justify-content-start">Digite o CVV do cartão:</label>
+                    <input type="text" class="form-control" name="cvv" maxlength="3" required placeholder="Exemplo: 123">
+                </div>
+                <div class="mb-3">
+                    <label for="bandeira" class="form-label d-flex justify-content-start">Escolha a bandeira do cartão:</label>
+                    <select name="bandeira" class="form-select" required>
+                        <% bandeiras.forEach(function(bandeira) { %>
+                            <option value="<%= bandeira.descricao %>"><%= bandeira.descricao %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="preferencial" class="form-label d-flex justify-content-start">Este cartão é preferencial?</label>
+                    <select name="preferencial" class="form-select" required>
+                        <option value="true">Sim</option>
+                        <option value="false">Não</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-outline-primary" id="addCartao">Adicionar Cartão</button>
+    </form>
+</div>

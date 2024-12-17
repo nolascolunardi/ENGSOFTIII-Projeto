@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container-fluid d-flex">
+        <%- include('partials/sidebar.ejs') %>
+        <div 
+            class="container text-center align-self-center d-flex flex-column justify-content-center align-items-center" 
+            style="flex: 1;"
+        >
+            <h2 class="logo-text">Bem-vindo ao Sistema de Gestão de Clientes</h2>
+            <img src="/images/principal.jpg" alt="Logo" class="img-fluid imagem">
+            <div class="align-self-center text-center">
+                <p class="col-7 mx-auto texto">
+                    Este sistema permite o cadastro e gerenciamento de clientes de maneira simples e eficiente. 
+                    Utilize as funcionalidades acima para adicionar novos clientes ou visualizar a lista atualizada.
+                </p>
+                <p class="col-7 mx-auto texto">
+                    Nosso objetivo é facilitar o acompanhamento e organização dos dados dos seus clientes em um só lugar.
+                </p>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

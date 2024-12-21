@@ -1,0 +1,24 @@
+.modal-content {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+  
+.modal-body {
+    font-size: 1.2rem;
+}
+
+.modal-footer {
+    padding-top: 15px;
+}
+  
+.btn-lg {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+  

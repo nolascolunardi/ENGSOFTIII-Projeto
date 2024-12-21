@@ -1,0 +1,8 @@
+enum TipoOperacao {
+    ATUALIZAR_CLIENTE = 'ATUALIZAR_CLIENTE',
+    ATUALIZAR_ENDERECOS = 'ATUALIZAR_ENDERECOS',
+    ALTERAR_SENHA = 'ALTERAR_SENHA',
+    INATIVAR = 'INATIVAR'
+}
+  
+export default TipoOperacao;

@@ -1,0 +1,13 @@
+services:
+  db:
+    container_name: engIII_bd
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: postgres
+
+volumes:
+  postgres_data:

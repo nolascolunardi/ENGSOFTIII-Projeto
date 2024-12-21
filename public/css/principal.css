@@ -1,0 +1,11 @@
+.texto{
+    font-size: 16px;
+    color: var(--gray);
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.imagem{
+    width: 50%;
+    margin: 2%;
+}

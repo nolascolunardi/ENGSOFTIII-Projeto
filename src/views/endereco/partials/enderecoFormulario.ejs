@@ -1,0 +1,160 @@
+<% if (enderecos) { %>
+    <% enderecos.forEach(function(endereco, index) { %>
+        <div id="enderecos-container" class="section active">
+            <form class="form-endereco">
+                <h3 class="d-flex justify-content-start mb-3 "><img src="/images/formCliente/marker.svg" alt="client-icon" class="form-icon">Dados do Endereço <span class="endereco-counter form-counter">1</span></h3>
+                <div style="width: 100%;">
+                    <div class="entry">
+                        <input type="hidden" name="enderecoId" value="<%= endereco.id %>">
+                        <div class="mb-3">
+                            <label for="fraseCurta" class="form-label d-flex justify-content-start">Digite uma frase curta para o endereco:<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="fraseCurta" required placeholder="Exemplo: Minha Casa"
+                                value="<%= endereco ? endereco.fraseCurta : '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cep" class="form-label d-flex justify-content-start">Digite o CEP:<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="cep" required placeholder="Exemplo: 08940000" maxlength="8"
+                                value="<%= endereco ? endereco.cep : '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tipoLogradouro" class="form-label d-flex justify-content-start">Digite o tipo do logradouro:<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="tipoLogradouro" required placeholder="Exemplo: Rua"
+                                value="<%= endereco ? endereco.tipoLogradouro : '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="logradouro" class="form-label d-flex justify-content-start">Digite o logradouro:<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="logradouro" required placeholder="Exemplo: Jose Oliveira"
+                                value="<%= endereco ? endereco.logradouro : '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numeroEndereco" class="form-label d-flex justify-content-start">Digite o número:<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="numeroEndereco" required placeholder="Exemplo: 152" maxlength="5"
+                                value="<%= endereco ? endereco.numero : '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tiporesidencia" class="form-label d-flex justify-content-start">Digite o tipo de residência:<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="tiporesidencia" required placeholder="Exemplo: Casa"
+                                value="<%= endereco ? endereco.tipoResidencia : '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bairro" class="form-label d-flex justify-content-start">Digite o bairro:<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="bairro" required placeholder="Exemplo: Centro"
+                                value="<%= endereco ? endereco.bairro : '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cidade" class="form-label d-flex justify-content-start">Digite o nome do cidade:<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="cidade" required placeholder="Exemplo: Mogi das Cruzes"
+                                value="<%= endereco ? endereco.cidade : '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="estado" class="form-label d-flex justify-content-start">Digite a sigla do estado:<span class="required">*</span></label>
+                            <input type="text" class="form-control w-100" name="estado" required placeholder="Exemplo: SP" maxlength="3"
+                                value="<%= endereco ? endereco.estado : '' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pais" class="form-label d-flex justify-content-start">Selecione o país:<span class="required">*</span></label>
+                            <select name="pais" class="form-select" required>
+                                <% paises.forEach(function(pais) { %>
+                                    <option value="<%= pais.nome %>" <%= endereco && endereco.pais && endereco.pais.nome === pais.nome ? 'selected' : '' %>>
+                                        <%= pais.nome %>
+                                    </option>
+                                <% }); %>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="hidden" name="enderecoId" value="<%= endereco.id %>" data-tipo-endereco="<%= endereco.tipoEndereco %>">
+                            <label for="tipoEndereco" class="form-label
+                            d-flex justify-content-start">Selecione o tipo de endereço:<span class="required">*</span></label>
+                            <select name="tipoEndereco" class="form-select" required>
+                                <option value="ENTREGA_E_COBRANCA" <%= endereco?.tipo === 'ENTREGA_E_COBRANCA' ? 'selected' : '' %>>
+                                    Entrega e Cobrança
+                                </option>
+                                <option value="ENTREGA" <%= endereco?.tipo === 'ENTREGA' ? 'selected' : '' %>>
+                                    Entrega
+                                </option>
+                                <option value="COBRANCA" <%= endereco?.tipo === 'COBRANCA' ? 'selected' : '' %>>
+                                    Cobrança
+                                </option>                                
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="observacao" class="form-label d-flex justify-content-start">Digite a observacao:</label>
+                            <input type="text" class="form-control w-100" name="observacao"
+                                value="<%= endereco ? endereco.observacao : '' %>">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    <% }); %>
+<% } else { %>
+    <div id="enderecos-container" class="section <%= idCliente ? 'active' : '' %>">
+        <form class="form-endereco">
+            <h3 class="d-flex justify-content-start mb-3 "><img src="/images/formCliente/marker.svg" alt="client-icon" class="form-icon">Dados do Endereço <span class="endereco-counter form-counter">1</span></h3>
+            <div style="width: 100%;">
+                <div class="entry">
+                    <div class="mb-3">
+                        <label for="fraseCurta" class="form-label d-flex justify-content-start">Digite uma frase curta para o endereco:<span class="required">*</span></label>
+                        <input type="text" class="form-control" name="fraseCurta" required placeholder="Exemplo: Minha Casa">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cep" class="form-label d-flex justify-content-start">Digite o CEP:<span class="required">*</span></label>
+                        <input type="text" class="form-control" name="cep" required placeholder="Exemplo: 08940000" maxlength="8">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipoLogradouro" class="form-label d-flex justify-content-start">Digite o tipo do logradouro:<span class="required">*</span></label>
+                        <input type="text" class="form-control" name="tipoLogradouro" required placeholder="Exemplo: Rua">
+                    </div>
+                    <div class="mb-3">
+                        <label for="logradouro" class="form-label d-flex justify-content-start">Digite o logradouro:<span class="required">*</span></label>
+                        <input type="text" class="form-control" name="logradouro" required placeholder="Exemplo: Jose Oliveira">
+                    </div>
+                    <div class="mb-3">
+                        <label for="numeroEndereco" class="form-label d-flex justify-content-start">Digite o número:<span class="required">*</span></label>
+                        <input type="text" class="form-control" name="numeroEndereco" required placeholder="Exemplo: 152" maxlength="5">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tiporesidencia" class="form-label d-flex justify-content-start">Digite o tipo de residência:<span class="required">*</span></label>
+                        <input type="text" class="form-control" name="tiporesidencia" required placeholder="Exemplo: Casa">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bairro" class="form-label d-flex justify-content-start">Digite o bairro:<span class="required">*</span></label>
+                        <input type="text" class="form-control" name="bairro" required placeholder="Exemplo: Centro">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cidade" class="form-label d-flex justify-content-start">Digite o nome do cidade:<span class="required">*</span></label>
+                        <input type="text" class="form-control" name="cidade" required placeholder="Exemplo: Mogi das Cruzes">
+                    </div>
+                    <div class="mb-3">
+                        <label for="estado" class="form-label d-flex justify-content-start">Digite a sigla do estado:<span class="required">*</span></label>
+                        <input type="text" class="form-control w-100" name="estado" required placeholder="Exemplo: SP" maxlength="3">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pais" class="form-label d-flex justify-content-start">Selecione o país:<span class="required">*</span></label>
+                        <select name="pais" class="form-select" required>
+                            <% paises.forEach(function(pais) { %>
+                                <option value="<%= pais.nome %>">
+                                    <%= pais.nome %>
+                                </option>
+                            <% }); %>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipoEndereco" class="form-label
+                        d-flex justify-content-start">Selecione o tipo de endereço:<span class="required">*</span></label>
+                        <select name="tipoEndereco" class="form-select" required>
+                            <option value="ENTREGA_E_COBRANCA">Entrega e Cobrança</option>
+                            <option value="ENTREGA">Entrega</option>
+                            <option value="COBRANCA">Cobrança</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="observacao" class="form-label d-flex justify-content-start">Digite a observacao:</label>
+                        <input type="text" class="form-control w-100" name="observacao">
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-outline-primary" id="addEndereco">Adicionar Endereço</button>
+        </form>
+    </div>
+<% } %>

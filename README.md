@@ -7,7 +7,7 @@ Este projeto implementa um sistema de cadastro de clientes, atendendo aos requis
 ### **Tecnologias Utilizadas**
 
 * **Node.js:** Ambiente de execução JavaScript para o lado do servidor.
-* **Express.js:** Framework web minimalista para Node.js, utilizado para criar a API RESTful do sistema.
+* **Express.js:** Framework web  para Node.js, utilizado para criar API do sistema.
 * **EJS:** Motor de template para renderizar as páginas HTML do lado do servidor.
 * **Bootstrap:** Framework CSS para design responsivo e desenvolvimento front-end.
 
